@@ -27,3 +27,10 @@ export const setEdit = (index)=>{
         payload : index
     };
 };
+
+export const completeTodo = (index)=>{
+    return {
+        type : "COMPLETE_TODO",
+        payload : index
+    };
+};

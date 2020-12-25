@@ -13,7 +13,7 @@ const reducer = (state = initialState, action)=>{
             };
             return{
                 ...state,
-                todos :[obj,...state.todos]
+                todos :[...state.todos,obj]
             };
         case "DELETE_TODO":
             const newTodos =state.todos;
@@ -37,7 +37,18 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 todos:tempTodo
             };
-
+        case "COMPLETE_TODO":
+            const completeTodo =state.todos;
+            if(completeTodo[action.payload].isComplete){
+                completeTodo[action.payload].isComplete = false;   
+            }
+            else{
+                completeTodo[action.payload].isComplete = true;
+            }
+            return{
+                ...state,
+                todos:completeTodo
+            };
         default:
             return state;
     }

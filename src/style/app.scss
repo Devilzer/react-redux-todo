@@ -46,12 +46,16 @@ body {
         flex-direction: row;
         justify-content: space-around;
         .text {
+          user-select: none;
           margin-left: 5px;
           width: 70%;
           input {
             outline: none;
             width: 100%;
           }
+        }
+        .text:hover {
+          color: $red;
         }
         .btn-con {
           width: 20%;

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteTodo } from "../redux/actions/todoAction";
 import { setEdit } from "../redux/actions/todoAction";
 import { editTodo } from "../redux/actions/todoAction";
+import { completeTodo } from "../redux/actions/todoAction";
 
 function Todo(props) {
     const [value,setValue] = useState(props.todo.text);
@@ -24,13 +25,13 @@ function Todo(props) {
         button=<div className="btn" onClick={handleSubmit}>Done</div>
     }
     else{
-        todoEle =<div className="text">
+        todoEle =<div className="text" style={{textDecoration :props.todo.isComplete ? "line-through" :""}} onDoubleClick={()=>dispatch(completeTodo(props.index))}>
         {props.todo.text}
         </div>
         button=<div className="btn" onClick={()=>dispatch(setEdit(props.index))}>Edit</div>;
     }
     return (
-        <div className="todo" key={props.index} index={props.index}>           
+        <div className="todo" key={props.index} index={props.index} >           
             {todoEle}
             <div className="btn-con">
                 {button}

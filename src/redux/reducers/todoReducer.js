@@ -22,6 +22,22 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 todos:newTodos
             };
+        case "SET_EDIT":
+            const updateTodos =state.todos;
+            updateTodos[action.payload].editable = true;
+            return{
+                ...state,
+                todos:updateTodos
+            };
+        case "EDIT_TODO":
+            const tempTodo = state.todos;
+            tempTodo[action.payload.index].text = action.payload.text;
+            tempTodo[action.payload.index].editable = false;
+            return{
+                ...state,
+                todos:tempTodo
+            };
+
         default:
             return state;
     }

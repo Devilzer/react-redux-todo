@@ -21,3 +21,9 @@ export const deleteTodo = (index) => {
         payload : index
     };
 };
+export const setEdit = (index)=>{
+    return {
+        type : "SET_EDIT",
+        payload : index
+    };
+};

@@ -44,17 +44,21 @@ body {
         border: solid 1px $red;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         .text {
           margin-left: 5px;
+          width: 70%;
+          input {
+            outline: none;
+            width: 100%;
+          }
         }
         .btn-con {
-          width: 17.5%;
+          width: 20%;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           .btn {
-            margin-right: 10px;
             padding-left: 2.5px;
             padding-right: 2.5px;
             border: solid 1px $orange;

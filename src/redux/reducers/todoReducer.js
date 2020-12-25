@@ -3,6 +3,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action)=>{
+    
     switch (action.type) {
         case "CREATE_TODO":
             const obj ={
@@ -10,10 +11,9 @@ const reducer = (state = initialState, action)=>{
                 isComplete :false,
                 editable : false
             };
-            const newTodo = [...todos,obj];
             return{
                 ...state,
-                todos : newTodo
+                todos :[obj,...state.todos]
             };
         default:
             return state;

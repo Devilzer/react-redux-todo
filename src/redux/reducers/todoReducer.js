@@ -7,7 +7,8 @@ const reducer = (state = initialState, action)=>{
         case "CREATE_TODO":
             const obj ={
                 text : action.payload,
-                isComplete :false
+                isComplete :false,
+                editable : false
             };
             const newTodo = [...todos,obj];
             return{
@@ -18,3 +19,4 @@ const reducer = (state = initialState, action)=>{
             return state;
     }
 };
+export default reducer;

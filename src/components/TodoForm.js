@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { createTodo } from "../redux/actions/todoAction";
 function TodoForm() {
     const [value,setValue] = useState("");

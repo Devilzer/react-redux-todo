@@ -15,6 +15,13 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 todos :[obj,...state.todos]
             };
+        case "DELETE_TODO":
+            const newTodos =state.todos;
+            newTodos.splice(action.payload,1);
+            return{
+                ...state,
+                todos:newTodos
+            };
         default:
             return state;
     }

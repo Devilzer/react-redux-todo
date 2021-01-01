@@ -3,7 +3,7 @@ import Todo from "./Todo";
 import { useSelector } from "react-redux";
 // import { deleteTodo } from "../redux/actions/todoAction";
 function Todolist() {
-    const state = useSelector(state=>state);
+    const state = useSelector(state=>state.todo);
     return (
         <div className ="todolist">
             {
